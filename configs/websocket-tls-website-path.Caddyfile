@@ -4,7 +4,11 @@ http://V2rayAddress {
 }
 https://V2rayAddress
 {
-  root /etc/v2ray/pages
+  root /usr/local/caddy/www/file
+  gzip
+  filemanager / /usr/local/caddy/www/file {     
+   database /usr/local/caddy/filemanager.db   
+  } 
   tls /etc/v2ray/pem.pem /etc/v2ray/key.key
   header / Strict-Transport-Security "max-age=63072000; preload"
   proxy /fuckgfw_gfwmotherfuckingboom/PathUUID localhost:V2RayListenPort {
